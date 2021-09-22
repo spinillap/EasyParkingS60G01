@@ -4,9 +4,9 @@ id_rol VARCHAR (15) NOT NULL,
 nombre_rol VARCHAR (50) NOT NULL,
 CONSTRAINT rol_pk PRIMARY KEY (id_rol));
 CREATE TABLE usuario(
-id_usuario INTEGER (15) NOT NULL,
+id_usuario VARCHAR (15) NOT NULL,
 nombre_usu VARCHAR (50) NOT NULL,
-telefono_usu INTEGER (10) NOT NULL,
+telefono_usu VARCHAR (10) NOT NULL,
 email_usu VARCHAR (80) NOT NULL,
 direccion_usu VARCHAR (50) NOT NULL,
 id_rol VARCHAR (15) NOT NULL,
@@ -21,8 +21,8 @@ nombre_tar VARCHAR (15) NOT NULL,
 CONSTRAINT id_tarifa_pk PRIMARY KEY (id_tarifa));
 CREATE TABLE plaza(
 id_plaza VARCHAR (15) NOT NULL,
-numero_pla INTEGER (3) NOT NULL,
-edtado_pla VARCHAR (30) NOT NULL,
+numero_pla VARCHAR (3) NOT NULL,
+estado_pla VARCHAR (30) NOT NULL,
 CONSTRAINT id_plaza_pk PRIMARY KEY (id_plaza));
 CREATE TABLE tipo_vehiculo(
 id_tipo_veh VARCHAR (15) NOT NULL,
@@ -44,7 +44,7 @@ CONSTRAINT plaza_id_plaza_fk FOREIGN KEY (id_plaza) REFERENCES plaza (id_plaza))
 CREATE TABLE factura(
 id_factura VARCHAR (15) NOT NULL,
 hora_sal DATETIME,
-id_usuario INTEGER (15) NOT NULL,
+id_usuario VARCHAR (15) NOT NULL,
 id_tarifa VARCHAR (15) NOT NULL,
 id_ticket VARCHAR (15) NOT NULL,
 valor_tot DOUBLE,
